@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WeatherNow — Advanced Weather App</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffb347">
+  <link rel="apple-touch-icon" href="icons/weatherapp-icon-comprehensive.png">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>WeatherNow</h1>
+      <div class="header-actions">
+        <button id="themeToggle" aria-label="Toggle Theme">🌙</button>
+      </div>
+    </header>
+
+    <section class="controls">
+      <div class="search">
+        <input id="cityInput" type="search" placeholder="Search city e.g. London" />
+        <button id="searchBtn" aria-label="Search">Search</button>
+      </div>
+      <div class="actions">
+        <button id="locBtn" title="Use my location">📍</button>
+        <button id="unitBtn" title="Toggle °C/°F">°C</button>
+      </div>
+    </section>
+
+    <section id="weatherCard" class="card hidden" aria-live="polite">
+      <div class="top">
+        <div>
+          <div class="city" id="cityName">—</div>
+          <div class="time" id="localTime">—</div>
+        </div>
+        <img id="weatherIcon" alt="" />
+      </div>
+
+      <div class="temp-container">
+        <div class="temp" id="temp">—°</div>
+        <div class="desc" id="desc">—</div>
+        <div class="feels-like">Feels like <span id="feelsLike">—</span></div>
+      </div>
+
+      <div class="details">
+        <div>Humidity: <span id="humidity">—</span>%</div>
+        <div>Wind: <span id="wind">—</span> m/s</div>
+        <div>Pressure: <span id="pressure">—</span> hPa</div>
+        <div>Visibility: <span id="visibility">—</span> km</div>
+        <div>Sunrise: <span id="sunrise">—</span></div>
+        <div>Sunset: <span id="sunset">—</span></div>
+      </div>
+
+      <footer class="card-footer">
+        <div id="lastUpdated">—</div>
+        <button id="saveFav" class="fav-btn">Add to favorites</button>
+      </footer>
+    </section>
+
+    <section class="favorites">
+      <h4>Favorites</h4>
+      <div id="favList" class="chips"></div>
+    </section>
+
+    <p class="note">Built with OpenWeatherMap API</p>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
